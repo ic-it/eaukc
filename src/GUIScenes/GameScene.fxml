@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="737.0" prefWidth="1331.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.GUIScenes.GameSceneController">
+  <children>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label fx:id="messageLabel" alignment="CENTER" prefHeight="50.0" prefWidth="1234.0" text="Message:" />
+            <Button fx:id="quitButton" mnemonicParsing="false" onAction="#quitButtonClick" prefHeight="50.0" prefWidth="134.0" text="Quit" />
+         </children>
+      </HBox>
+      <SplitPane dividerPositions="0.1292517006802721" orientation="VERTICAL" prefHeight="737.0" prefWidth="1058.0">
+        <items>
+            <SplitPane dividerPositions="0.7524454477050414, 0.8871331828442438" prefHeight="216.0" prefWidth="1190.0">
+               <items>
+                  <TextField fx:id="newRateTextFeild" prefHeight="92.0" prefWidth="483.0" promptText="New Rate">
+                     <font>
+                        <Font size="45.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="raiseButtonClick" mnemonicParsing="false" onAction="#raiseButton" prefHeight="492.0" prefWidth="173.0" text="Raise">
+                     <font>
+                        <Font size="39.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="adminAccount" text="-1">
+                     <font>
+                        <Font size="77.0" />
+                     </font>
+                  </Label>
+               </items>
+            </SplitPane>
+            <SplitPane dividerPositions="0.029827315541601257" orientation="VERTICAL" prefHeight="336.0" prefWidth="1190.0">
+              <items>
+                  <SplitPane dividerPositions="0.5" prefHeight="200.0" prefWidth="200.0">
+                     <items>
+                        <Button mnemonicParsing="false" onAction="#viewItemButtonClick" prefHeight="57.0" prefWidth="319.0" text="Vew Item">
+                           <font>
+                              <Font size="39.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="currentRateLabel" text="The current rate: ">
+                           <font>
+                              <Font size="47.0" />
+                           </font>
+                        </Label>
+                     </items>
+                  </SplitPane>
+                  <SplitPane dividerPositions="0.780672268907563" prefHeight="200.0" prefWidth="200.0">
+                     <items>
+                        <TextArea fx:id="logsTextArea" prefHeight="550.0" prefWidth="1190.0" />
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="43.0" prefWidth="258.0" text="Members:">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <ListView fx:id="membersListView" prefHeight="499.0" prefWidth="288.0" />
+                           </children>
+                        </VBox>
+                     </items>
+                  </SplitPane>
+              </items>
+            </SplitPane>
+        </items>
+      </SplitPane>
+  </children>
+</VBox>
